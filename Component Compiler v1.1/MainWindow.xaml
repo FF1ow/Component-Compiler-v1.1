@@ -1,0 +1,48 @@
+﻿<Window x:Class="Component_Compiler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Component_Compiler"
+        mc:Ignorable="d"
+        Title="Component Compiler v1.0 by George Wolff" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="381*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="" HorizontalAlignment="Left" Margin="178,47,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontFamily="Arial Black" FontSize="24" Margin="10,15,0,0" Grid.ColumnSpan="2"><Run Text="Component "/><Run Text="  "/><Run Text=" "/><Run Text="Compiler"/><Run Text=" "/></TextBlock>
+        <TextBox x:Name="txtBudget" HorizontalAlignment="Left" Height="32" Margin="10,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="10,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" FontFamily="Arial Black" FontSize="14" Grid.ColumnSpan="2"><Run Text="Budget"/><Run Language="en-gb" Text=" "/></TextBlock>
+        <ComboBox Name="cboUse" HorizontalAlignment="Left" Height="40" Margin="10,253,0,0" VerticalAlignment="Top" Width="148" SelectionChanged="ComboBox_SelectionChanged" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="10,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" FontFamily="Arial Black" FontSize="14" Grid.ColumnSpan="2"><Run Language="en-gb" Text="Use of PC"/></TextBlock>
+        <Button x:Name="btnGenPartslist" Content="Generate Partslist" HorizontalAlignment="Left" Height="94" Margin="10,304,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click" FontFamily="Arial Black" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="10,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" FontFamily="Arial Black" TextDecorations="Underline" FontSize="16"  Grid.ColumnSpan="2" Foreground="Red"><Run Language="en-gb" Text="Choose for me..."/></TextBlock>
+        <Button x:Name="btnLDA" Content="Load " HorizontalAlignment="Left" Height="58" Margin="282,16,0,0" VerticalAlignment="Top" Width="101" FontFamily="Arial Black" Grid.Column="1" Click="btnLDA_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Height="58" Margin="151,16,0,0" VerticalAlignment="Top" Width="108" Click="Button_Click" FontFamily="Arial Black" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="151,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" FontFamily="Arial Black" TextDecorations="Underline" FontSize="16" Grid.Column="1" Foreground="Red"><Run Language="en-gb" Text="DIY..."/></TextBlock>
+        <ComboBox x:Name="cboCPU" HorizontalAlignment="Left" Height="34" Margin="151,132,0,0" VerticalAlignment="Top" Width="232" SelectionChanged="cboCPU_SelectionChanged" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="151,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" FontFamily="Arial Black" FontSize="14" Grid.Column="1"><Run Language="en-gb" Text="CPU"/></TextBlock>
+        <ComboBox x:Name="cboMobo" HorizontalAlignment="Left" Height="35" Margin="151,185,0,0" VerticalAlignment="Top" Width="232" SelectionChanged="cboMobo_SelectionChanged" Grid.Column="1">
+            <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="152,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" FontSize="14" FontFamily="Arial Black" Grid.Column="1"><Run Language="en-gb" Text="Motherboard"/></TextBlock>
+        <ComboBox x:Name="cboRAM" HorizontalAlignment="Left" Height="35" Margin="151,250,0,0" VerticalAlignment="Top" Width="232" SelectionChanged="cboRAM_SelectionChanged" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="152,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" FontSize="14" FontFamily="Arial Black" Grid.Column="1"><Run Language="en-gb" Text="Memory"/></TextBlock>
+        <ComboBox x:Name="cboGPU" HorizontalAlignment="Left" Height="35" Margin="152,309,0,0" VerticalAlignment="Top" Width="232" SelectionChanged="cboGPU_SelectionChanged" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="152,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" FontSize="14" FontFamily="Arial Black" Grid.Column="1"><Run Language="en-gb" Text="GPU"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="152,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" FontSize="14" FontFamily="Arial Black" Grid.Column="1"><Run Language="en-gb" Text="PS"/><Run Text="U"/></TextBlock>
+        <ComboBox x:Name="cboPSU" HorizontalAlignment="Left" Height="35" Margin="151,363,0,0" VerticalAlignment="Top" Width="232" Grid.Column="1" SelectionChanged="cboPSU_SelectionChanged"/>
+        <Border x:Name="txtQueries" Margin="425,34,36,213" BorderThickness="2" BorderBrush="red" Height="187" Width="301" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left" Margin="467,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="187" Width="301" />
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="425,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Arial Black" FontSize="14" Grid.Column="1"><Run Text="Compatibility"/><Run Language="en-gb" Text=" Flagger"/></TextBlock>
+        <Border x:Name="txtQueries_Copy" Margin="425,242,36,5" BorderThickness="2" BorderBrush="red" Height="187" Width="301" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left" Margin="467,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="187" Width="301" />
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="425,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Arial Black" FontSize="14" Grid.Column="1"><Run Text="Compatibility"/><Run Text=" Flagger"/><Run Language="en-gb" Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="425,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Arial Black" FontSize="14" Grid.Column="1"><Run Language="en-gb" Text="Partslist:"/></TextBlock>
+
+    </Grid>
+</Window>
